@@ -6,12 +6,67 @@
     <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
   </head>
   <body>
-    <video id="videoPlayer" controls muted></video>
+    <div class="container">
+      <h1>DASH Live Stream Demo</h1>
+      <h2>
+        This is a demo of live streaming that uses the DASH protocol along with
+        ffmpeg on the server to perform encoding. You can stream to it using OBS
+        to capture footage from a PC. This runs on a very slow server so
+        patience is required. It will eventually load. <br /><br />If you would
+        like to see the demo in action, contact Justin Morrow at 205-527-8868
+        and I will set up a stream for you to watch!
+      </h2>
+      <video id="videoPlayer" controls muted></video>
+    </div>
     <script>
       var url = "/dash/stream/manifest.mpd";
       var player = dashjs.MediaPlayer().create();
       player.initialize(document.getElementById("videoPlayer"), url, true);
-      // player.setLiveDelay(4); // Optional: Adjusts live stream delay
     </script>
+    <style>
+      body {
+        min-width: 100vw;
+        min-height: 100vh;
+        background-color: aqua;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        color: aliceblue;
+        font-size: 32pt;
+      }
+      h2 {
+        color: aliceblue;
+        font-size: 12pt;
+        width: 50%;
+        padding-bottom: 20px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.521);
+        padding: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        background: radial-gradient(circle at center, #00c6ff 0%, #0072ff 100%);
+        flex: 1;
+        width: 100%;
+        height: 100%;
+      }
+      #videoPlayer {
+        width: 60%;
+        /* height: 100%; */
+        background: radial-gradient(circle at center, #8400ff 0%, #4d0e64 100%);
+      }
+    </style>
   </body>
 </html>
