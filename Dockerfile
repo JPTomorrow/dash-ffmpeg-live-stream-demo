@@ -18,4 +18,4 @@ RUN chmod +x /start.sh
 # Expose the necessary ports
 EXPOSE 1935
 EXPOSE 80
-CMD ["/start.sh"]
+CMD ["/start.sh"]   
