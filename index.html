@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Live Stream</title>
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+  </head>
+  <body>
+    <video id="videoPlayer" controls muted></video>
+    <script>
+      var url = "/dash/stream/manifest.mpd";
+      var player = dashjs.MediaPlayer().create();
+      player.initialize(document.getElementById("videoPlayer"), url, true);
+      // player.setLiveDelay(4); // Optional: Adjusts live stream delay
+    </script>
+  </body>
+</html>
