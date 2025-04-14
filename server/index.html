@@ -10,16 +10,12 @@
       <h1>DASH Live Stream Demo</h1>
       <h2>
         This is a demo of live streaming that uses the DASH protocol along with
-        ffmpeg on the server to perform encoding. You can stream to it using OBS
-        to capture footage from a PC. This runs on a very slow server so
-        patience is required. It will eventually load. <br /><br />If you would
-        like to see the demo in action, contact Justin Morrow at 205-527-8868
-        and I will set up a stream for you to watch!
+        OBS to record and ffmpeg to encode the stream to DASH protocol.
       </h2>
       <video id="videoPlayer" controls muted></video>
     </div>
     <script>
-      var url = "/dash/stream/manifest.mpd";
+      var url = "/dash/stream/output.mpd";
       var player = dashjs.MediaPlayer().create();
       player.initialize(document.getElementById("videoPlayer"), url, true);
     </script>

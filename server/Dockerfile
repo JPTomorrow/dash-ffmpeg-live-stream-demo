@@ -1,9 +1,6 @@
 # Use the tiangolo/nginx-rtmp base image
 FROM tiangolo/nginx-rtmp:latest
 
-# Install FFmpeg
-RUN apt-get update && apt-get install -y ffmpeg
-
 # Copy the custom nginx.conf into the container
 COPY nginx.conf /etc/nginx/nginx.conf
 
